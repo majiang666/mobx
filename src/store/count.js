@@ -9,7 +9,7 @@ class Count {
         this.test = ['aaaa',"mj"]
     }
     @computed get getCount(){
-        return this.test.length
+        return this.test.length;
     }
 }
 const store = new Count();
