@@ -1,17 +1,16 @@
 import React from 'react';
-// import { observer,inject } from 'mobx-react'
-import Count from './components/count';
-import CountClass from './components/countClass';
-import DevTools from 'mobx-react-devtools';
-// @inject('Count')
-// @observer
+import Index from './components/home';
+import Todo from './components/todo';
+import { Route,Switch } from 'react-router-dom';
+
 class App extends React.Component{
   render(){
     return (
       <div className="App">
-        <Count />
-        <p>=================================</p>
-        <CountClass />
+        <Switch>
+        <Route path="/" exact component={ Index }></Route>
+        <Route path="/todo" component={ Todo }></Route>
+        </Switch>
       </div>
     );
   }

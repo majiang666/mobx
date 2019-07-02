@@ -4,11 +4,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import stores from './store';
 import { Provider } from 'mobx-react';
+import { configure } from 'mobx';
+import { HashRouter } from 'react-router-dom';
+configure({ enforceActions: "observed" });
 
 ReactDOM.render(
-    <Provider {...stores}>
-        <App />
-    </Provider>, 
+    <HashRouter>
+        <Provider {...stores}>
+            <App />
+        </Provider>
+    </HashRouter>, 
     document.getElementById('root')
 );
 
